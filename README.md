@@ -4,18 +4,17 @@ FluxBus é um sistema inovador de rastreamento e gestão de transporte público,
 🔹 Principais Funcionalidades:
 
     📍 Mapa interativo exibindo rotas e localização em tempo real.
-    ⏳ Consulta de horários de ônibus diretamente pelo site.
+    ⏳ Consulta de horários de ônibus diretamente pelo web app.
     🏢 Painel administrativo para empresas gerenciarem suas linhas e horários.
-    🔄 Atualização em tempo real via integração com Arduino + MQTT.
-    🎟️ Emulação de compra de passagens e geração de QR Codes.
+    🔄 Atualização em tempo real via integração com Arduino
 
 ⚙️ Tecnologias Utilizadas:
 
     Frontend: HTML, CSS, JavaScript (Leaflet para mapas).
-    Backend: Node.js + Express (API REST + WebSockets).
+    Backend: Flask
     Banco de Dados: SQLite.
     IoT: Arduino para rastreamento de ônibus.
 
 🚀 Status do Projeto:
 
-🛠️ Em desenvolvimento – versão inicial focada em prototipagem e testes de viabilidade.
+🛠️ Em desenvolvimento – Início do desenvolvimento das diferentes páginas da aplicação.
