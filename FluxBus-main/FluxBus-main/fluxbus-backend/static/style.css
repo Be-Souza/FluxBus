@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Garet', sans-serif;
+    background: linear-gradient(135deg, #0d0d0d 0%, #094b59 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fluxbus-logo {
+    max-width: 100%;   
+    height: auto;      
+    display: block;    
+    margin: 0 auto 30px auto; 
+}
+
+/*login */
+
+.login-container {
+    background: rgba(13, 13, 13, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(242, 242, 242, 0.1);
+    border-radius: 20px;
+    padding: 40px 30px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    align-items: center;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.login-form input {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #1e1e1e;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.login-form input::placeholder {
+    color: #aaa;
+}
+
+.login-form button {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #1391bb;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.login-form button:hover {
+    background-color: #0b6583;
+}
+
+.register-link {
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+.register-link a {
+    color: #1391bb;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
