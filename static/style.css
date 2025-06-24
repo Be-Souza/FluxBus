@@ -1,0 +1,350 @@
+@charset "UTF-8";
+
+:root {
+    --cor01: #1391bb;
+    --cor02: #0f758c;
+    --cor03: #0a4b59;
+    --cor04: #f2f2f2;
+    --cor05: #222121;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configuração geral do body - versão unificada */
+body {
+    font-family: 'Garet', sans-serif;
+    background: linear-gradient(135deg, #0d0d0d 0%, #094b59 100%);
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Body para página de login */
+body.login-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Body para página home */
+body.home-page {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    background-image: linear-gradient(-45deg, var(--cor03), black);
+    height: 100vh;
+}
+
+/* Logo do FluxBus */
+.fluxbus-logo {
+    max-width: 100%;   
+    height: auto;      
+    display: block;    
+    margin: 0 auto 30px auto; 
+}
+
+/* === ESTILOS DE LOGIN === */
+.login-container {
+    background: rgba(13, 13, 13, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(242, 242, 242, 0.1);
+    border-radius: 20px;
+    padding: 40px 30px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    align-items: center;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.login-form input {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #1e1e1e;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.login-form input::placeholder {
+    color: #aaa;
+}
+
+.login-form button {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--cor01);
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.login-form button:hover {
+    background-color: #0b6583;
+}
+
+.register-link {
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+.register-link a {
+    color: var(--cor01);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+/* === SISTEMA DE NOTIFICAÇÕES === */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 20px;
+    border-radius: 12px;
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    z-index: 1000;
+    transform: translateX(400px);
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.notification.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.notification.success {
+    background: linear-gradient(135deg, #10b981, #059669);
+    border-left: 4px solid #34d399;
+}
+
+.notification.error {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    border-left: 4px solid #f87171;
+}
+
+.notification.info {
+    background: linear-gradient(135deg, var(--cor02), #15a0bf);
+    border-left: 4px solid #22d3ee;
+}
+
+/* === ESTILOS DA HOME === */
+
+/* === ESTILOS DA HOME PAGE === */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: var(--cor05);
+}
+
+/* Mapa */
+.map-container {
+    flex: 1;
+    position: relative;
+    background-color: #e9ecef;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+/* Loading state para o mapa */
+.map-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    color: var(--cor04);
+}
+
+.map-loading i {
+    font-size: 48px;
+    margin-bottom: 15px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+/* Painel de busca */
+.search-panel {
+    background: var(--cor04);
+    border-radius: 20px 20px 0 0;
+    padding: 25px 20px 20px;
+    position: relative;
+    z-index: 1000;
+    margin-top: -20px;
+}
+
+.search-panel::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 4px;
+    background-color: var(--cor03);
+    border-radius: 2px;
+}
+
+.search-title {
+    font-size: 25px;
+    font-weight: normal;
+    color: var(--cor05);
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.input-wrapper i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--cor05);
+    font-size: 16px;
+}
+
+.search-input {
+    width: 100%;
+    height: 50px;
+    border: 2px solid var(--cor02);
+    border-radius: 30px;
+    padding: 0 20px 0 45px;
+    font-size: 20px;
+    background-color: var(--cor02);
+    color: var(--cor04);
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--cor01);
+    box-shadow: 0 0 0 2px var(--cor01);
+}
+
+.search-input::placeholder {
+    color: #d0e6f2;
+    font-weight: bold;
+    opacity: 1;
+}
+
+.search-button {
+    width: 40%;
+    height: 50px;
+    background: var(--cor02);
+    color: var(--cor04);
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px auto;
+}
+
+.search-button:hover {
+    background-color: var(--cor01);
+    color: white;
+    box-shadow: 1px 1px 10px var(--cor02);
+    transform: translateY(-2px);
+}
+
+.search-button:active {
+    transform: translateY(0);
+}
+
+/* Footer de navegação */
+.bottom-nav {
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
+    border-radius: 20px 20px 0 0;
+    position: relative;
+    z-index: 1000;
+    margin-top: -20px;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--cor04);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 10px 15px;
+    border-radius: 50%;
+}
+
+.nav-item.active,
+.nav-item:hover {
+    color: var(--cor01);
+    background-color: rgba(19, 145, 187, 0.1);
+}
+
+.nav-item i {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.nav-item span {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* Responsividade */
+@media (max-width: 400px) {
+    .container {
+        max-width: 100%;
+    }
+    
+    .search-panel {
+        padding: 20px 15px 15px;
+    }
+}

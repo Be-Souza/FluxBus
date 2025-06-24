@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    
+    <title>FluxBus - Home</title>
+</head>
+<body class="home-page">
+        <div class="container">
+        <div class="map-container">
+            <div id="map">
+                <div class="map-loading">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Carregando mapa...</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="search-panel">
+            <h2 class="search-title">Para onde vamos?</h2>
+            <div class="input-group">
+                <div class="input-wrapper">
+                    <i class="fas fa-circle"></i>
+                    <input type="text" class="search-input" id="origin" placeholder="De onde você está saindo?" readonly>
+                </div>
+                <div class="input-wrapper">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <input type="text" class="search-input" id="destination" placeholder="Para onde você quer ir?">
+                </div>
+            </div>
+            <button class="search-button" onclick="searchRoute()">
+                <i class="fas fa-search"></i>
+                Buscar Rota
+            </button>
+        </div>
+
+        <div class="bottom-nav">
+            <div class="nav-item active">
+                <i class="fas fa-home"></i>
+                <span>Início</span>
+            </div>
+            <div class="nav-item">
+                <i class="fas fa-route"></i>
+                <span>Rotas</span>
+            </div>
+            <div class="nav-item">
+                <i class="fas fa-clock"></i>
+                <span>Horários</span>
+            </div>
+            <div class="nav-item">
+                <i class="fas fa-user"></i>
+                <span>Perfil</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js"></script>
+
+    <script src="{{ url_for('static', filename='map.js') }}"></script>
+    
+</body>
+</html>
